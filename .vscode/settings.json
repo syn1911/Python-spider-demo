@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 22,
+    "markdown.preview.fontSize": 22,
+    "debug.console.fontSize": 22,
+    "terminal.integrated.fontSize": 20,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}
