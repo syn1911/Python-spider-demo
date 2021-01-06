@@ -100,3 +100,8 @@ for req in requested_toppings:
 
 print("\nFinished making your pizza!")
 
+# java  for 循环   for(int i=0;i<10;i++)
+# python用  for s in range(10)
+
+for s in range(10):
+    print("for 循环了："+str(s)+"次")
