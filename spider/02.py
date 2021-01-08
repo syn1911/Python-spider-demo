@@ -1,51 +1,64 @@
+import requests
+
 # requests库学习
-# 下面是官方网址
-# https://requests.readthedocs.io/en/master/
-import requests
+# 创建一个get请求
+# repo=requests.get("https://api.github.com/events")
+# print(repo.text)
+# https://httpbin.org/ 专门测试请求
+# 创建一个post 请求：
+# reps=requests.post('https://httpbin.org/post',data={'name':'lktbz'})
+# reps=requests.post('https://httpbin.org/delete')
+# reps=requests.post('https://httpbin.org/get')
 
-# r=requests.get("http://www.baidu.com")
-# print(r)
+
+# 构建请求参数
+# params={'key1': 'value1', 'key2': 'value2'}
+# requ=requests.get('https://httpbin.org/get',params=params)
+# print(requ.url)
+# # 构建列表参数
+# payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
+# r=requests.get('https://httpbin.org/get',params=payload)
+# print("构建url 为:",r.url)
+
+# 响应内容
+# r = requests.get('https://api.github.com/events')
+# print("响应内容为",r.text)
+# print("响应内容为",r.status_code)
+# print("响应内容为",r.encoding)
+# print("响应内容为",r.headers)
+
+
+# json 响应内容
+# r = requests.get('https://api.github.com/events')
+# print(r.json())
+
+
+# 自定义响应头
+
+url = 'https://api.github.com/some/endpoint'
+headers = {'user-agent': 'my-app/0.0.1'}
+r = requests.get(url, headers=headers)
 # print(r.text)
-# print(r.cookies)
-# print(r.encoding)
 
-# 构建get
-
-# r=requests.get("http://httpbin.org/get")
+# 复杂的post
+payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.post("http://httpbin.org/post", data=payload)
 # print(r.text)
-# 构建带参数的get
 
-# data={
-#     'name':'lktbz',
-#     'age':17
-# }
-# rs=requests.get('http://httpbin.org/get',params=data)
-# # 打印之下，发现控制台出现重构请求连接
-# print(rs.text)
+# 响应头
+r = requests.get('http://httpbin.org/get')
+# print(r.headers)
+# print(r.headers['Content-Type'])
+# print(r.headers['Date'])
 
 
-import requests
-# 正则表达式
-import re
+# cookie
+# url = 'http://httpbin.org/cookies'
+# cookies = dict(cookies_are='working')
+# r = requests.get(url,cookies=cookies)
+# print(r.text)
 
-# 构建请求头
-headers = {
-    'Use-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
-
-}
-r = requests.get("http://httpbin.org/get", headers=headers)
+# session
+s=requests.session()
+r=s.get("http://www.baidu.com")
 print(r.text)
-# 下面是浏览器返回
-# {
-#   "args": {},
-#   "headers": {
-#     "Accept": "*/*",
-#     "Accept-Encoding": "gzip, deflate",
-#     "Host": "httpbin.org",
-#     "Use-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-#     "User-Agent": "python-requests/2.25.1",
-#     "X-Amzn-Trace-Id": "Root=1-5ff58842-62562b696b9fade9623b77fc"
-#   },
-#   "origin": "111.199.191.188",
-#   "url": "http://httpbin.org/get"
-# }
