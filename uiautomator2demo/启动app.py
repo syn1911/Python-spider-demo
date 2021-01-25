@@ -48,8 +48,8 @@ d = u2.connect("127.0.0.1:62001")  # connect to device  通过adb方式链接
 # print(d.window_size())
 
 # 获取打开的app devices  便捷获取package 与activity
-# for ins in d.app_current().items():
-#     print(ins)
+for ins in d.app_current().items():
+    print(ins)
 
 # 获取设备的详细信息
 # print(d.device_info)
