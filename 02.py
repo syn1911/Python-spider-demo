@@ -5,7 +5,7 @@ list2=[1, 2, 3, 4, 5, 6, 7 ]
 print(list2[2])
 print(list2[3])
 print(list1[1])
-print(list1[3])
+print(list1)
 
 print(list1[0].title())
 # 返回最后一个元素的方法
