@@ -6,9 +6,13 @@ import time
 
 # 加载浏览器驱动
 driver = webdriver.Chrome("F:\chromedriver.exe")
-# 访问
-driver.get("http://qq.com")
+driver.implicitly_wait(5)
+# className使用
+driver.get("http://www.qq.com")
 
-time.sleep(3)
+print(driver.title)
+# 获取网站地址栏文本
+print(driver.current_url)
 # 退出浏览器
+print(driver.get_window_size)
 driver.quit()
